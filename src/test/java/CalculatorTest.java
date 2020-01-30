@@ -1,4 +1,6 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,5 +20,16 @@ class CalculatorTest {
         assertEquals(6,stringCalculator.add("//[***][%%%]\n1***2%%%3"));
         assertEquals(6,stringCalculator.add("//[(-_-')][%]\n1(-_-')2%3"));
         assertEquals(7,stringCalculator.add("//[abc][777][:(]\n1abc27773:(1"));
+    }
+    @Test
+    void Exceptions(){
+        assertThrows(RuntimeException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                stringCalculator output = new stringCalculator();
+                output.add("1,2,3//;\n1000,1;2");
+            }
+        });
+
     }
 }

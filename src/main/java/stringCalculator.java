@@ -5,7 +5,7 @@ public class stringCalculator {
     static String delimiterBracket = "(?<=\\[).+?(?=\\])";
     public static void main(String[] args) {
 
-        System.out.println(stringCalculator.add("1,2,3//;\git n1000,1;2"));
+        System.out.println(stringCalculator.add("1,2,3//;\n1000,1;2"));
     }
     public static int add(String input)throws IllegalArgumentException{
         int sum = 0;

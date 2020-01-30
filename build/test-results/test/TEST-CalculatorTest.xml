@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-30T15:16:44" hostname="Area51s-MacBook-Pro.local" time="0.109">
+<testsuite name="CalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-30T15:53:37" hostname="Area51s-MacBook-Pro.local" time="0.029">
   <properties/>
-  <testcase name="add()" classname="CalculatorTest" time="0.109"/>
+  <testcase name="Exceptions()" classname="CalculatorTest" time="0.029"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
