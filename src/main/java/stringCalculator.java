@@ -1,29 +1,27 @@
 import java.util.regex.*;
-public class Calculator {
+public class stringCalculator {
     static String regex = "[\\d\\-]+";
-    //static String Rege = "[0-9]";
     static String RegSquareBracket = "[/]{2}(\\[).+(])(\\[).+(])";
     static String delimiterBracket = "(?<=\\[).+?(?=\\])";
     public static void main(String[] args) {
 
-        System.out.println(Calculator.add("   //;\n1000,1;2"));
+        System.out.println(stringCalculator.add("1,2,3//;\git n1000,1;2"));
     }
     public static int add(String input)throws IllegalArgumentException{
         int sum = 0;
         String results = "";
-
+        if(input.isEmpty()){
+            return sum;
+        }
         if(!Character.isDigit(input.charAt(input.length()-1))){
             throw new RuntimeException("Error: invalid input");
         }
         else if(input.startsWith(" ")){
             throw new RuntimeException("Error: invalid input");
             }
-        else if(Character.isDigit(input.charAt(0))|| input.startsWith("//")){
+        else if(Character.isDigit(input.charAt(0))&& input.contains("//")){
             throw new RuntimeException("Error: invalid input");
         }
-        /*else if(){
-
-        }*/
           else if(Pattern.compile(RegSquareBracket).matcher(input.split("\n")[0]).matches()) {
             String []output = input.split("\n");
             Pattern p = Pattern.compile(delimiterBracket);
