@@ -20,6 +20,7 @@ class CalculatorTest {
         assertEquals(6,stringCalculator.add("//[***][%%%]\n1***2%%%3"));
         assertEquals(6,stringCalculator.add("//[(-_-')][%]\n1(-_-')2%3"));
         assertEquals(7,stringCalculator.add("//[abc][777][:(]\n1abc27773:(1"));
+
     }
     @Test
     void Exceptions(){
@@ -31,5 +32,15 @@ class CalculatorTest {
             }
         });
 
+    }
+    @Test
+    void Exception(){
+        assertThrows(IllegalArgumentException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                stringCalculator outcome = new stringCalculator();
+                outcome.add("-1,2,-3,4");
+            }
+        });
     }
 }

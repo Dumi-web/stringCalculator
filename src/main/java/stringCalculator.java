@@ -3,9 +3,9 @@ public class stringCalculator {
     static String regex = "[\\d\\-]+";
     static String RegSquareBracket = "[/]{2}(\\[).+(])(\\[).+(])";
     static String delimiterBracket = "(?<=\\[).+?(?=\\])";
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
-        System.out.println(stringCalculator.add("1,2,3//;\n1000,1;2"));
+        System.out.println(stringCalculator.add("-1,2,-3,4"));
     }
     public static int add(String input)throws IllegalArgumentException{
         int sum = 0;
@@ -63,8 +63,8 @@ public class stringCalculator {
                 if(Math.abs(Integer.parseInt(match.group()))==Integer.parseInt(input.substring(input.length() - 1)) &&!results.equals("")){
                    try {
                        throw new IllegalArgumentException(results);
-                   }catch (RuntimeException e){
-                       System.out.println("ERROR: negatives not allowed "+results.substring(0,results.length()-1));;
+                   }catch (IllegalArgumentException e){
+                       throw new IllegalArgumentException("ERROR: negatives not allowed "+results.substring(0,results.length()-1));
                    }
                 }
 
